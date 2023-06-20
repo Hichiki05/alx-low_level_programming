@@ -1,8 +1,8 @@
-#include "main.c"
+#include "main.h"
 /**
- * main - check the code
+ * main - Entry point of the program
  *
- * Return: Always 0.
+ * Return: No return value (void)
  */
 int main(void)
 {
