@@ -4,14 +4,14 @@
  * _strcat - a fonction that concatenates two strings
  *
  * @src:char
- * @dest:char 
+ * @dest:char
  *
  *Return:char
  */
 
 char *_strcat(char *dest, char *src)
 {
-	char *original = dest;
+	char *s = dest;
 
 	while (*dest != '\0')
 	{
@@ -25,5 +25,5 @@ char *_strcat(char *dest, char *src)
 		src++;
 	}
 	*dest = '\0';
-	return (original);
+	return (s);
 }
