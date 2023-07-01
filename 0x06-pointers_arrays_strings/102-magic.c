@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point of the program
+ *
+ * This function serves as the entry point of the program. It is automatically
+ * called when the program starts executing. The main function should have an
+ * integer return type.
+ *
+ * Return: 0 on successful execution
+ */
+
 int main(void)
 {
 	int n;
@@ -8,10 +18,11 @@ int main(void)
 
 	a[2] = 1024;
 	p = &n;
-	/**
+	/*
+	 * main - start
 	 * write your line of code here...
 	 * Remember:
-	 * - you are not allowed to use
+	 * - you are not allowed to use a
 	 * - you are not allowed to modify p
 	 * - only one statement
 	 * - you are not allowed to code anything else than this line of code
