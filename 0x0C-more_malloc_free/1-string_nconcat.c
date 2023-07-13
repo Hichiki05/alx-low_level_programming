@@ -8,10 +8,6 @@
  * @s1:the first string
  * @s2:the second string
  * @n:the num of bytes
- * @i:int
- * @j:int
- * @len1:int
- * @ln2:int
  *
  * Return:0
  */
