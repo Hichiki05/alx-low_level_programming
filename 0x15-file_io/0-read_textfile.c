@@ -1,52 +1,37 @@
 #include "main.h"
 #include <stdlib.h>
-#include <fcntl.h>
-#include <sys/types.h>
 
-/*
-* read_testfile - the fnct
-* @filename: the name of the file
-* @letters: the nmbr of letters to red and write
-* Return: the nmbr of letters read and writting
-*/
-
+/**
+ * read_textfile - Reads a text file
+ * @filename: A pointer
+ * @letters: The number
+ *
+ * Return: If the function fails or filename is NULL
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	ssize_t o, r, w;
+	char *buffer;
+
 	if (filename == NULL)
-	return (0);
+		return (0);
 
-int fd = open(filename, O_RDONLY);
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
 
-if (fd == -1)
-return (0);
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
-char *buffer = malloc(letters);
-
-if (buffer == NULL)
-{
-	close(fd);
-	return (0);
-	}
-
-	ssize_t bytesRead = read(fd, buffer, letters);
-
-	if (bytesRead == -1)
+	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
-		close(fd);
 		free(buffer);
 		return (0);
-		}
+	}
 
-		ssize_t bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
+	free(buffer);
+	close(o);
 
-		if (bytesWritten == -1 || bytesWritten != bytesRead)
-		{
-			close(fd);
-			free(buffer);
-			return (0);
-			}
-			close(fd);
-			free(buffer);
-
-			return (bytesRead);
-			}
+	return (w);
+}
