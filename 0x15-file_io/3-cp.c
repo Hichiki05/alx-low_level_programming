@@ -38,7 +38,12 @@ void close_file(int fd)
 		exit(100);
 	}
 }
-
+/**
+ * main - Entry point of the program.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
+ * Return: 0 on success, other values
+ */
 int main(int argc, char *argv[])
 {
 	int from, to, r, w;
