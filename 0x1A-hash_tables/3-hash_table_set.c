@@ -22,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (value_copy == NULL)
 		return (0);
 
-	indx = key_indx((const unsigned char *)key, ht->size);
+	indx = key_index((const unsigned char *)key, ht->size);
 	for (n = indx; ht->array[n]; n++)
 	{
 		if (strcmp(ht->array[n]->key, key) == 0)
